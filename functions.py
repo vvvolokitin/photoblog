@@ -21,4 +21,4 @@ def upload_posts(posts):
     Загружает пост.
     """
     with open(POST_PATH, 'w', encoding='utf-8') as file:
-        json.dump(posts, file, ensure_ascii=False)
+        json.dump(posts, file)

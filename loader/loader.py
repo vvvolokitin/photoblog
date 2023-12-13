@@ -1,7 +1,11 @@
 from flask import Blueprint, render_template, request
 
+import logging
+
 from functions import load_posts, upload_posts
 
+
+logging.basicConfig(encoding='utf-8', level=logging.INFO)
 
 loader_blueprint: Blueprint = Blueprint(
     'loader_blueprint',
@@ -37,12 +41,18 @@ def upload_page():
         content = request.values['content']
         posts = load_posts()
         posts.append({
-            'pic': f'uploads/images/{filename}',
+            'pic': f'/uploads/images/{filename}',
             'content': content
         })
         upload_posts(posts)
         file.save(f'uploads/images/{filename}')
+        if filename.split('.')[-1].lower() not in ('png', 'jpeg', 'jpg'):
+            logging.info(f'Файл не изображение {filename}')
     except FileNotFoundError:
         return '<h1>Файл не найден</h1><br><a href="//" class="link">Назад</a>'
     else:
-        return render_template('post_uploaded.html', pic='uploads/images/'+filename, content=content)
+        return render_template(
+            'post_uploaded.html',
+            pic=f'/uploads/images/{filename}',
+            content=content
+        )

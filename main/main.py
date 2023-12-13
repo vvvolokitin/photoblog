@@ -1,6 +1,10 @@
 from flask import Blueprint, render_template, request
 
+import logging
+
 from functions import load_posts
+
+logging.basicConfig(encoding='utf-8', level=logging.INFO)
 
 
 main_blueprint: Blueprint = Blueprint(
@@ -34,6 +38,7 @@ def search_page() -> str:
         str: Результат поискового запроса.
     """
     search_word = request.args['s']
+    logging.info(f'Слово для поиска: {search_word}')
     posts = [
         element for element in load_posts() if search_word.lower()
         in element['content'].lower()

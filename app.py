@@ -12,29 +12,9 @@ app.register_blueprint(main_blueprint)
 app.register_blueprint(loader_blueprint)
 
 
-@app.route("/")
-def page_index():
-    pass
-
-
-@app.route("/list")
-def page_tag():
-    pass
-
-
-@app.route("/post", methods=["GET", "POST"])
-def page_post_form():
-    pass
-
-
-@app.route("/post", methods=["POST"])
-def page_post_upload():
-    pass
-
-
-@app.route("/uploads/images/<path:path>")
+@app.route('/uploads/images/<path:path>')
 def static_dir(path):
-    return send_from_directory("uploads/images", path)
+    return send_from_directory('uploads/images', path)
 
 
 if __name__ == '__main__':
