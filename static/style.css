@@ -1,6 +1,7 @@
 body {
-    font-family: arial;
+    font-family: 'Times New Roman', Times, serif;
     font-size: 18px;
+    background-color: #8fd39d;
 }
 
 main {
@@ -14,7 +15,7 @@ hr {
 
 select {
     padding: 7px 6px;
-    background-color: #ddd;
+    background-color: #60b5fa;
     border:none;
     border-radius: 4px;
     font-size: 18px;
@@ -45,10 +46,10 @@ a {
 
 
 .button {
-    background-color: #ddd;
+    background-color: #a5b3ff;
     padding: 8px 16px;
     text-decoration: none;
-    color: grey;
+    color: rgb(0, 0, 0);
     border:none;
     border-radius: 4px;
     font-size: 18px;
