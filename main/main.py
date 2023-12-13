@@ -3,7 +3,7 @@ from flask import Blueprint, render_template, request
 from functions import load_posts
 
 
-main_blueprint = Blueprint(
+main_blueprint: Blueprint = Blueprint(
     'main_blueprint',
     __name__,
     template_folder='templates'
