@@ -32,9 +32,9 @@ def page_post_upload():
     pass
 
 
-@app.route("/uploads/<path:path>")
+@app.route("/uploads/images/<path:path>")
 def static_dir(path):
-    return send_from_directory("uploads", path)
+    return send_from_directory("uploads/images", path)
 
 
 if __name__ == '__main__':
