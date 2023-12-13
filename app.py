@@ -2,6 +2,7 @@ from flask import Flask, request, render_template, send_from_directory
 
 from main.main import main_blueprint
 
+
 POST_PATH = "posts.json"
 UPLOAD_FOLDER = "uploads/images"
 
