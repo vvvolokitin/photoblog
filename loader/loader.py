@@ -49,6 +49,7 @@ def upload_page():
         if filename.split('.')[-1].lower() not in ('png', 'jpeg', 'jpg'):
             logging.info(f'Файл не изображение {filename}')
     except FileNotFoundError:
+        logging.error('Ошибка при загрузке файла')
         return '<h1>Файл не найден</h1><br><a href="//" class="link">Назад</a>'
     else:
         return render_template(
